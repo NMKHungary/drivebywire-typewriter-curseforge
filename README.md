@@ -41,6 +41,10 @@ Each channel is active (`1`) while the key is held and inactive (`0`) when relea
 3. Right-click the hub with an empty hand — your keypresses now drive the network.
 4. Right-click again to disconnect.
 
+![Wire Connect](./docs/wire.png)
+![Turn A](./docs/turnA.png)
+![Turn D](./docs/turnD.png)
+
 ## License
 
 All Rights Reserved — © SparklezFish
