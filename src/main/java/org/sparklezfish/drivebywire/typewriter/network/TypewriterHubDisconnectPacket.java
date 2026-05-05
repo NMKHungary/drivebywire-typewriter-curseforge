@@ -8,6 +8,7 @@ import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
 import net.minecraft.resources.ResourceLocation;
 import net.neoforged.neoforge.network.handling.IPayloadContext;
 
+import org.jetbrains.annotations.NotNull;
 import org.sparklezfish.drivebywire.typewriter.DriveByWireTypewriterMod;
 import org.sparklezfish.drivebywire.typewriter.blocks.TypewriterHubBlockEntity;
 
@@ -24,7 +25,7 @@ public record TypewriterHubDisconnectPacket(BlockPos pos) implements CustomPacke
         );
 
     @Override
-    public CustomPacketPayload.Type<? extends CustomPacketPayload> type() {
+    public CustomPacketPayload.@NotNull Type<? extends CustomPacketPayload> type() {
         return TYPE;
     }
 

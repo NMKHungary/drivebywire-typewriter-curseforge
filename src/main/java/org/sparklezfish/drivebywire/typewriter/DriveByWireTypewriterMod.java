@@ -47,6 +47,8 @@ public class DriveByWireTypewriterMod {
             .noOcclusion())
     );
     public static final DeferredItem<BlockItem> TYPEWRITER_HUB_ITEM = ITEMS.registerSimpleBlockItem(TYPEWRITER_HUB);
+
+    @SuppressWarnings("unused")
     public static final DeferredHolder<CreativeModeTab, CreativeModeTab> CREATIVE_TAB = CREATIVE_TABS.register(
         "main",
         () -> CreativeModeTab.builder()
