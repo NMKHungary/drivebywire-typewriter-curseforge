@@ -1,25 +1,46 @@
+# Drive By Wire — Typewriter
 
-Installation information
-=======
+A NeoForge addon for Minecraft 1.21.1 that adds a keyboard-driven wire source to the [Drive By Wire](https://modrinth.com/mod/drive-by-wire) network, using [Simulated](https://modrinth.com/mod/simulated)'s typewriter mechanics.
 
-This template repository can be directly cloned to get you started with a new
-mod. Simply create a new repository cloned from this one, by following the
-instructions provided by [GitHub](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template).
+## What it does
 
-Once you have your clone, simply open the repository in the IDE of your choice. The usual recommendation for an IDE is either IntelliJ IDEA or Eclipse.
+Adds a **Typewriter Hub** block. Right-click it with an empty hand to start typing — your keypresses are broadcast as redstone signals on the Drive By Wire network, one channel per key. Right-click again to stop.
 
-If at any point you are missing libraries in your IDE, or you've run into problems you can
-run `gradlew --refresh-dependencies` to refresh the local cache. `gradlew clean` to reset everything 
-{this does not affect your code} and then start the process again.
+## Blocks
 
-Mapping Names:
-============
-By default, the MDK is configured to use the official mapping names from Mojang for methods and fields 
-in the Minecraft codebase. These names are covered by a specific license. All modders should be aware of this
-license. For the latest license text, refer to the mapping file itself, or the reference copy here:
-https://github.com/NeoForged/NeoForm/blob/main/Mojang.md
+| Block | Description |
+|-------|-------------|
+| Typewriter Hub | A typewriter and multi-channel wire source in one block. |
 
-Additional Resources: 
-==========
-Community Documentation: https://docs.neoforged.net/  
-NeoForged Discord: https://discord.neoforged.net/
+## Key channels
+
+The hub exposes a channel for every key:
+
+- Letters `A`–`Z`
+- Digits `0`–`9`
+- Symbols: Space, `'`, `,`, `-`, `.`, `/`, `;`, `=`, `[`, `]`, `\`
+- Control: Enter, Tab, Backspace, Delete, Caps Lock
+- Navigation: Arrow keys, Page Up/Down, Home, End
+- Modifiers: Shift, Ctrl, Alt, Super, Menu
+
+Each channel is active (`1`) while the key is held and inactive (`0`) when released. Only one player can use a hub at a time; disconnecting or losing window focus resets all channels.
+
+## Requirements
+
+| Mod | Version |
+|-----|---------|
+| NeoForge | 21.1.228+ |
+| Simulated (Create: Simulated) | 1.1.3+ |
+| Drive By Wire | 0.2.7+ |
+| Create | 6.0.10+ |
+
+## Usage
+
+1. Place a **Typewriter Hub** in the world.
+2. Connect wire from it to whatever you want to control.
+3. Right-click the hub with an empty hand — your keypresses now drive the network.
+4. Right-click again to disconnect.
+
+## License
+
+All Rights Reserved — © SparklezFish
